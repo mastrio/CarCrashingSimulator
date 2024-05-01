@@ -1,4 +1,0 @@
-Title: Racing game
-elevator pitch: Its a game about racing a car, wow
-unique selling points:
-- none its a damn generic racing game

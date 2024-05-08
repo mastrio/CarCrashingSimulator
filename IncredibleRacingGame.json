@@ -405,6 +405,28 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/44aceaa249d2ecb8bfe3eb7bedcb17aac44c0f5f13f9f58d85427a5afa7e92f0_CarterOne-Regular.ttf",
           "name": "CarterOne-Regular.ttf"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Racer Assets/ShieldCar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Racer Assets\\ShieldCar.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/CartoonSmoke.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "CartoonSmoke.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Particles/PixiJS/971c74ddfb7396b4a871d3949e0970d50be470c636b91142362c15a3431ed63c_CartoonSmoke.png",
+          "name": "CartoonSmoke.png"
+        }
       }
     ],
     "resourceFolders": []
@@ -420,6 +442,12 @@
         {
           "folded": true,
           "name": "crashed",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "folded": true,
+          "name": "kill_player",
           "type": "boolean",
           "value": false
         }
@@ -508,22 +536,22 @@
                   "image": "Racer Assets\\car.png",
                   "points": [
                     {
-                      "name": "FrontLeftWheel",
+                      "name": "Wheel_0",
                       "x": 14,
                       "y": 33
                     },
                     {
-                      "name": "FrontRightWheel",
+                      "name": "Wheel_1",
                       "x": 69,
                       "y": 32
                     },
                     {
-                      "name": "BackLeftWheel",
+                      "name": "Wheel_2",
                       "x": 15,
                       "y": 121.5
                     },
                     {
-                      "name": "BackRightWheel",
+                      "name": "Wheel_3",
                       "x": 68,
                       "y": 123
                     }
@@ -627,7 +655,7 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "ObstacleCar",
       "type": "Sprite",
@@ -642,7 +670,7 @@
         {
           "name": "hit_timer",
           "type": "number",
-          "value": 12000
+          "value": 120
         }
       ],
       "effects": [],
@@ -731,42 +759,6 @@
                 {
                   "hasCustomCollisionMask": true,
                   "image": "Racer Assets\\green-car.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 80,
-                        "y": 0
-                      },
-                      {
-                        "x": 80,
-                        "y": 160
-                      },
-                      {
-                        "x": 0,
-                        "y": 160
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Racer Assets\\pink-car.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1410,6 +1402,89 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "ShieldedCar",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "is_hit",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "folded": true,
+          "name": "hit_timer",
+          "type": "number",
+          "value": 120
+        },
+        {
+          "folded": true,
+          "name": "shield_direction",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Racer Assets\\ShieldCar.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 80,
+                        "y": 0
+                      },
+                      {
+                        "x": 79,
+                        "y": 149.5
+                      },
+                      {
+                        "x": 33.5,
+                        "y": 168.5
+                      },
+                      {
+                        "x": 0,
+                        "y": 154.5
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -1419,16 +1494,24 @@
         "objectName": "PlayerCar"
       },
       {
+        "folderName": "Enemies",
+        "children": [
+          {
+            "objectName": "ShieldedCar"
+          },
+          {
+            "objectName": "ObstacleCar"
+          }
+        ]
+      },
+      {
         "objectName": "Highway"
       },
       {
-        "objectName": "ObstacleCar"
+        "objectName": "Explode"
       },
       {
         "objectName": "Border"
-      },
-      {
-        "objectName": "Explode"
       }
     ]
   },
@@ -1438,9 +1521,17 @@
       "objects": [
         {
           "name": "PlayerCar"
-        },
+        }
+      ]
+    },
+    {
+      "name": "EnemyObject",
+      "objects": [
         {
           "name": "ObstacleCar"
+        },
+        {
+          "name": "ShieldedCar"
         }
       ]
     }
@@ -1475,6 +1566,18 @@
       "name": "ascii_mode",
       "type": "boolean",
       "value": false
+    },
+    {
+      "folded": true,
+      "name": "spawn_type",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "spawn_pos",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [

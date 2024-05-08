@@ -33,33 +33,150 @@
       "actions": [
         {
           "type": {
-            "value": "Create"
-          },
-          "parameters": [
-            "",
-            "ObstacleCar",
-            "RandomFloatInRange(-250, 250)",
-            "-1000",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "ChangeSprite"
-          },
-          "parameters": [
-            "ObstacleCar",
-            "=",
-            "RandomInRange(0, 3)"
-          ]
-        },
-        {
-          "type": {
             "value": "ResetTimer"
           },
           "parameters": [
             "",
             "\"trafficspawner\""
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "spawn_type",
+            "=",
+            "RandomInRange(0, 4)"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "spawn_pos",
+            "=",
+            "RandomFloatInRange(-250, 250)"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "spawn_type",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "spawn_type",
+                "=",
+                "-1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "ShieldedCar",
+                "spawn_pos",
+                "-1000",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "ShieldedCar",
+                "shield_direction",
+                "=",
+                "RandomInRange(0, 1)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "spawn_type",
+                "!=",
+                "-1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "ObstacleCar",
+                "spawn_pos",
+                "-1000",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeSprite"
+              },
+              "parameters": [
+                "ObstacleCar",
+                "=",
+                "RandomInRange(0, 2)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "ShieldedCar",
+            "shield_direction",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FlippableCapability::FlippableBehavior::FlipX"
+          },
+          "parameters": [
+            "ShieldedCar",
+            "Flippable",
+            "yes"
           ]
         }
       ]
@@ -85,7 +202,7 @@
             "value": "AddForceXY"
           },
           "parameters": [
-            "ObstacleCar",
+            "EnemyObject",
             "0",
             "traffic_speed",
             ""
@@ -113,8 +230,8 @@
             "value": "CollisionNP"
           },
           "parameters": [
-            "ObstacleCar",
-            "PlayerCar",
+            "EnemyObject",
+            "DestructionSource",
             "",
             "",
             "yes"
@@ -125,7 +242,7 @@
             "value": "ObjectVariableAsBoolean"
           },
           "parameters": [
-            "ObstacleCar",
+            "EnemyObject",
             "is_hit",
             "False"
           ]
@@ -133,6 +250,80 @@
       ],
       "actions": [],
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "ShieldedCar",
+                "shield_direction",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "PlayerCar",
+                "kill_player",
+                "True"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "ShieldedCar",
+                "shield_direction",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Right"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "PlayerCar",
+                "kill_player",
+                "True"
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -183,7 +374,7 @@
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
-                "ObstacleCar",
+                "EnemyObject",
                 "is_hit",
                 "True"
               ]
@@ -193,7 +384,7 @@
                 "value": "AddForceAL"
               },
               "parameters": [
-                "ObstacleCar",
+                "EnemyObject",
                 "RandomInRange(0, 360)",
                 "2000",
                 "1"
@@ -206,8 +397,8 @@
               "parameters": [
                 "",
                 "Explode",
-                "ObstacleCar.X() + RandomInRange(-50, 50)",
-                "ObstacleCar.Y() + RandomInRange(-50, 50)",
+                "EnemyObject.X() + RandomInRange(-50, 50)",
+                "EnemyObject.Y() + RandomInRange(-50, 50)",
                 ""
               ]
             }
@@ -240,32 +431,12 @@
           "actions": [
             {
               "type": {
-                "value": "AddForceAL"
-              },
-              "parameters": [
-                "PlayerCar",
-                "RandomInRange(0, 360)",
-                "4000",
-                "1"
-              ]
-            },
-            {
-              "type": {
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
                 "PlayerCar",
-                "crashed",
+                "kill_player",
                 "True"
-              ]
-            },
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"crashtimer\""
               ]
             }
           ]
@@ -292,7 +463,7 @@
             "value": "ObjectVariableAsBoolean"
           },
           "parameters": [
-            "ObstacleCar",
+            "EnemyObject",
             "is_hit",
             "True"
           ]
@@ -304,7 +475,7 @@
             "value": "ModVarObjet"
           },
           "parameters": [
-            "ObstacleCar",
+            "EnemyObject",
             "hit_timer",
             "-",
             "1"
@@ -315,7 +486,7 @@
             "value": "Rotate"
           },
           "parameters": [
-            "ObstacleCar",
+            "EnemyObject",
             "1200",
             ""
           ]
@@ -330,7 +501,7 @@
             "value": "PosY"
           },
           "parameters": [
-            "ObstacleCar",
+            "EnemyObject",
             ">=",
             "500"
           ]
@@ -342,7 +513,7 @@
             "value": "Delete"
           },
           "parameters": [
-            "ObstacleCar",
+            "EnemyObject",
             ""
           ]
         }
@@ -356,7 +527,7 @@
             "value": "VarObjet"
           },
           "parameters": [
-            "ObstacleCar",
+            "EnemyObject",
             "hit_timer",
             "<=",
             "0"
@@ -369,7 +540,7 @@
             "value": "Delete"
           },
           "parameters": [
-            "ObstacleCar",
+            "EnemyObject",
             ""
           ]
         }

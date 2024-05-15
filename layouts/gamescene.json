@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4481978045410377,
+    "zoomFactor": 0.5468750000000039,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -279,6 +279,13 @@
       "include": {
         "includeConfig": 0
       },
+      "target": "MissileManager"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
       "target": "ExplosionManager"
     },
     {
@@ -313,6 +320,15 @@
           "parameters": [
             "",
             "\"trafficspawner\""
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"missilespawner\""
           ]
         },
         {
@@ -481,7 +497,7 @@
       "effects": [
         {
           "effectType": "CRT",
-          "name": "CRT Effecy",
+          "name": "CRT Effect",
           "doubleParameters": {
             "animationFrequency": 30,
             "animationSpeed": 1,

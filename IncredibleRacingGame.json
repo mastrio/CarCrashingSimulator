@@ -15,7 +15,7 @@
     "packageName": "com.example.gamename",
     "pixelsRounding": true,
     "projectUuid": "d46486cb-f94c-42bb-a5c9-93914e6c9fdc",
-    "scaleMode": "nearest",
+    "scaleMode": "linear",
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
     "useExternalSourceFiles": false,
@@ -427,6 +427,33 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Particles/PixiJS/971c74ddfb7396b4a871d3949e0970d50be470c636b91142362c15a3431ed63c_CartoonSmoke.png",
           "name": "CartoonSmoke.png"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Racer Assets/Reticule.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Racer Assets\\Reticule.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Racer Assets/Missile1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Racer Assets\\Missile1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Racer Assets/Missile2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Racer Assets\\Missile2.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -447,7 +474,7 @@
         },
         {
           "folded": true,
-          "name": "kill_player",
+          "name": "kill",
           "type": "boolean",
           "value": false
         }
@@ -570,20 +597,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 7,
+                        "y": 4.5
                       },
                       {
-                        "x": 80,
-                        "y": 0
+                        "x": 71.5,
+                        "y": 2.5
                       },
                       {
-                        "x": 80,
-                        "y": 160
+                        "x": 76,
+                        "y": 156.5
                       },
                       {
-                        "x": 0,
-                        "y": 160
+                        "x": 4.5,
+                        "y": 156.5
                       }
                     ]
                   ]
@@ -671,6 +698,12 @@
           "name": "hit_timer",
           "type": "number",
           "value": 120
+        },
+        {
+          "folded": true,
+          "name": "kill",
+          "type": "boolean",
+          "value": false
         }
       ],
       "effects": [],
@@ -845,7 +878,14 @@
       "name": "Explode",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "spawned",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
@@ -1427,6 +1467,12 @@
           "name": "shield_direction",
           "type": "number",
           "value": 0
+        },
+        {
+          "folded": true,
+          "name": "kill",
+          "type": "boolean",
+          "value": false
         }
       ],
       "effects": [],
@@ -1485,13 +1531,213 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "MissileWarning",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Racer Assets\\Reticule.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 24.5
+                      },
+                      {
+                        "x": 11.5,
+                        "y": 12
+                      },
+                      {
+                        "x": 24.5,
+                        "y": 6.5
+                      },
+                      {
+                        "x": 37.5,
+                        "y": 12
+                      },
+                      {
+                        "x": 42,
+                        "y": 24.5
+                      },
+                      {
+                        "x": 37.5,
+                        "y": 36
+                      },
+                      {
+                        "x": 24.5,
+                        "y": 42
+                      },
+                      {
+                        "x": 12,
+                        "y": 36.5
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Missile",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "target_y",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "MotionBlur",
+          "name": "Effect",
+          "doubleParameters": {
+            "kernelSize": 5,
+            "offset": 2,
+            "velocityX": 0,
+            "velocityY": 100
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Racer Assets\\Missile1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 46,
+                        "y": 0
+                      },
+                      {
+                        "x": 46,
+                        "y": 13
+                      },
+                      {
+                        "x": 0,
+                        "y": 13
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Racer Assets\\Missile2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 46,
+                        "y": 0
+                      },
+                      {
+                        "x": 46,
+                        "y": 13
+                      },
+                      {
+                        "x": 0,
+                        "y": 13
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
       {
-        "objectName": "PlayerCar"
+        "folderName": "MissileStuff",
+        "children": [
+          {
+            "objectName": "MissileWarning"
+          },
+          {
+            "objectName": "Missile"
+          }
+        ]
       },
       {
         "folderName": "Enemies",
@@ -1503,6 +1749,9 @@
             "objectName": "ObstacleCar"
           }
         ]
+      },
+      {
+        "objectName": "PlayerCar"
       },
       {
         "objectName": "Highway"
@@ -1557,6 +1806,12 @@
     },
     {
       "folded": true,
+      "name": "missile_spawn_rate",
+      "type": "number",
+      "value": 4
+    },
+    {
+      "folded": true,
       "name": "points",
       "type": "number",
       "value": 0
@@ -1606,6 +1861,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/explosionmanager"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/missilemanager"
     }
   ],
   "eventsFunctionsExtensions": [

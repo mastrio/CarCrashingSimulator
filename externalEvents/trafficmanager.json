@@ -47,7 +47,7 @@
           "parameters": [
             "spawn_type",
             "=",
-            "RandomInRange(0, 4)"
+            "RandomInRange(0, 3)"
           ]
         },
         {
@@ -73,6 +73,16 @@
                 "spawn_type",
                 "=",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "points",
+                ">=",
+                "5"
               ]
             }
           ],
@@ -281,7 +291,7 @@
               },
               "parameters": [
                 "PlayerCar",
-                "kill_player",
+                "kill",
                 "True"
               ]
             }
@@ -318,7 +328,7 @@
               },
               "parameters": [
                 "PlayerCar",
-                "kill_player",
+                "kill",
                 "True"
               ]
             }
@@ -341,65 +351,12 @@
           "actions": [
             {
               "type": {
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "traffic_speed",
-                "+",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "traffic_spawn_rate",
-                "-",
-                "0.002"
-              ]
-            },
-            {
-              "type": {
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "points",
-                "+",
-                "1"
-              ]
-            },
-            {
-              "type": {
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
                 "EnemyObject",
-                "is_hit",
+                "kill",
                 "True"
-              ]
-            },
-            {
-              "type": {
-                "value": "AddForceAL"
-              },
-              "parameters": [
-                "EnemyObject",
-                "RandomInRange(0, 360)",
-                "2000",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "Explode",
-                "EnemyObject.X() + RandomInRange(-50, 50)",
-                "EnemyObject.Y() + RandomInRange(-50, 50)",
-                ""
               ]
             }
           ]
@@ -435,7 +392,7 @@
               },
               "parameters": [
                 "PlayerCar",
-                "kill_player",
+                "kill",
                 "True"
               ]
             }
@@ -542,6 +499,145 @@
           "parameters": [
             "EnemyObject",
             ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "Kill car"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "ObjectVariableAsBoolean"
+          },
+          "parameters": [
+            "EnemyObject",
+            "kill",
+            "True"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetObjectVariableAsBoolean"
+          },
+          "parameters": [
+            "EnemyObject",
+            "kill",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "traffic_speed",
+            "+",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "traffic_spawn_rate",
+            "-",
+            "0.002"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "points",
+            "+",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetObjectVariableAsBoolean"
+          },
+          "parameters": [
+            "EnemyObject",
+            "is_hit",
+            "True"
+          ]
+        },
+        {
+          "type": {
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "EnemyObject",
+            "RandomInRange(0, 360)",
+            "2000",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Explode",
+            "EnemyObject.X() + RandomInRange(-50, 50)",
+            "EnemyObject.Y() + RandomInRange(-50, 50)",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "missile_spawn_rate",
+            ">",
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "points",
+            ">=",
+            "20"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "missile_spawn_rate",
+            "-",
+            "0.05"
           ]
         }
       ]

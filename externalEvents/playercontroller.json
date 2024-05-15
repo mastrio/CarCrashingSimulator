@@ -240,7 +240,7 @@
           },
           "parameters": [
             "PlayerCar",
-            "kill_player",
+            "kill",
             "True"
           ]
         }
@@ -252,7 +252,7 @@
           },
           "parameters": [
             "PlayerCar",
-            "kill_player",
+            "kill",
             "False"
           ]
         },

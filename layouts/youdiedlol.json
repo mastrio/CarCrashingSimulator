@@ -402,6 +402,18 @@
             "=",
             "ScreenHeight() / 2 - 50"
           ]
+        },
+        {
+          "type": {
+            "value": "PlayMusic"
+          },
+          "parameters": [
+            "",
+            "audio\\wah-wah-sad-trombone.mp3",
+            "",
+            "50",
+            ""
+          ]
         }
       ]
     },

@@ -18,11 +18,18 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.5468750000000039,
+    "zoomFactor": 1.4790395861757548,
     "windowMask": false
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "folded": true,
+      "name": "explosiongenerator",
+      "type": "number",
+      "value": 0
+    }
+  ],
   "instances": [
     {
       "angle": 0,
@@ -131,6 +138,38 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Overheat_Bar",
+      "persistentUuid": "226c77af-7916-430f-8b1d-02f202076fd4",
+      "width": 0,
+      "x": 350,
+      "y": 332,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "OverheatText",
+      "persistentUuid": "12b7fe45-c661-4aab-abb0-2611e81c341b",
+      "width": 0,
+      "x": 345,
+      "y": 266,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -228,6 +267,133 @@
         "align": "left",
         "wordWrap": true
       }
+    },
+    {
+      "assetStoreId": "3d6c54e76a9a06cbd7629c1e78388d4ab808bbf36d644c61d6a14c9ad34d4f89",
+      "name": "Overheat_Bar",
+      "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "PreviousHighValueDuration": 0,
+        "ShowLabel": false,
+        "BarTopPadding": 3,
+        "BarBottomPadding": 3,
+        "BarLeftPadding": 3,
+        "BarRightPadding": 3,
+        "MaxValue": 100,
+        "InitialValue": 0,
+        "EasingDuration": 0.25
+      },
+      "childrenContent": {
+        "Background": {
+          "bottomMargin": 0,
+          "height": 28,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "assets\\OverheatBorder.png",
+          "tiled": true,
+          "topMargin": 0,
+          "width": 192
+        },
+        "Buffer": {
+          "bottomMargin": 0,
+          "height": 22,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "assets\\OverheatBuffer.png",
+          "tiled": true,
+          "topMargin": 0,
+          "width": 186
+        },
+        "FillBar": {
+          "bottomMargin": 0,
+          "height": 22,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "assets\\OverheatFill.png",
+          "tiled": true,
+          "topMargin": 0,
+          "width": 186
+        },
+        "Label": {
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "string": "8 / 16",
+          "font": "",
+          "textAlignment": "center",
+          "characterSize": 16,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "8 / 16",
+            "font": "",
+            "textAlignment": "center",
+            "characterSize": 16,
+            "color": "255;255;255"
+          }
+        }
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": true,
+      "name": "OverheatText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Overheat",
+      "font": "CarterOne-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 40,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
+        "italic": true,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 10,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Overheat",
+        "font": "CarterOne-Regular.ttf",
+        "textAlignment": "left",
+        "characterSize": 40,
+        "color": "255;0;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -244,6 +410,12 @@
       },
       {
         "objectName": "ControlSurprise"
+      },
+      {
+        "objectName": "Overheat_Bar"
+      },
+      {
+        "objectName": "OverheatText"
       }
     ]
   },
@@ -340,6 +512,18 @@
             "=",
             "0",
             "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "PlayMusic"
+          },
+          "parameters": [
+            "",
+            "audio\\on-the-road-to-the-80s.mp3",
+            "yes",
+            "10",
             ""
           ]
         }
@@ -462,6 +646,35 @@
             "",
             "\"ASCIIMODE\"",
             "no"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "Managing the Overheat Bar"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+          },
+          "parameters": [
+            "Overheat_Bar",
+            "=",
+            "GlobalVariable(overheat)",
+            ""
           ]
         }
       ]

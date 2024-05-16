@@ -454,6 +454,129 @@
         "name": "Racer Assets\\Missile2.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Flat Bar Red Fill Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Flat Bar Red Fill Bar.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/pixel art/212e9679eaae4753beaa5d595d7c80ea66df3235485c6a3963e88b0d936a1798_Flat Bar Red Fill Bar.png",
+          "name": "Flat Bar Red Fill Bar.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Flat Bar White Border.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Flat Bar White Border.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/pixel art/c090d31cafed0c8ef7bb4d5af75a7dbf7149bcc03a7d5d63ae997d59100e362e_Flat Bar White Border.png",
+          "name": "Flat Bar White Border.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/OverheatFill.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\OverheatFill.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/OverheatBuffer.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\OverheatBuffer.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/OverheatBorder.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\OverheatBorder.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "audio/on-the-road-to-the-80s.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "audio\\on-the-road-to-the-80s.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "audio/wah-wah-sad-trombone.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "audio\\wah-wah-sad-trombone.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "audio/Explosion1.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "audio\\Explosion1.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "audio/Explosion2.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "audio\\Explosion2.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "audio/Explosion3.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "audio\\Explosion3.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "audio/Explosion4.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "audio\\Explosion4.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "audio/Explosion5.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "audio\\Explosion5.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1833,6 +1956,12 @@
       "name": "spawn_pos",
       "type": "number",
       "value": 0
+    },
+    {
+      "folded": true,
+      "name": "overheat",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
@@ -1868,6 +1997,10 @@
     }
   ],
   "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/panelspritecontinuousbar"
+    },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/panelspritebutton"

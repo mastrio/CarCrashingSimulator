@@ -370,7 +370,18 @@
           ]
         }
       ],
-      "actions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "hitstop_time",
+            "=",
+            "0.3 - (combo * 0.02)"
+          ]
+        }
+      ],
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -405,6 +416,16 @@
               "parameters": [
                 "seen_firetruck_instructions",
                 "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "hitstop_time",
+                "=",
+                "1"
               ]
             }
           ]
@@ -501,6 +522,16 @@
           "actions": [
             {
               "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "hitstop_time",
+                "=",
+                "0.2"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [
@@ -572,6 +603,16 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "hitstop_time",
+                "=",
+                "0.1"
+              ]
+            },
             {
               "type": {
                 "value": "SetObjectVariableAsBoolean"

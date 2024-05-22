@@ -2152,6 +2152,12 @@
       "name": "seen_firetruck_instructions",
       "type": "boolean",
       "value": false
+    },
+    {
+      "folded": true,
+      "name": "hitstop_time",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
@@ -2184,6 +2190,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/missilemanager"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/hitstopmanager"
     }
   ],
   "eventsFunctionsExtensions": [

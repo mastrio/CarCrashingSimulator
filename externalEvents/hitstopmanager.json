@@ -1,0 +1,80 @@
+{
+  "associatedLayout": "GameScene",
+  "lastChangeTimeStamp": 0,
+  "name": "HitstopManager",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "hitstop_time",
+            ">",
+            "0"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangeLayerTimeScale"
+          },
+          "parameters": [
+            "",
+            "",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "Wait"
+          },
+          "parameters": [
+            "0.1"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "hitstop_time",
+            "-",
+            "0.1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "hitstop_time",
+            ">",
+            "0"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangeLayerTimeScale"
+          },
+          "parameters": [
+            "",
+            "",
+            "1"
+          ]
+        }
+      ]
+    }
+  ]
+}

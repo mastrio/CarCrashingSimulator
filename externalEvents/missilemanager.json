@@ -380,6 +380,16 @@
           "actions": [
             {
               "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "hitstop_time",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetObjectVariableAsBoolean"
               },
               "parameters": [

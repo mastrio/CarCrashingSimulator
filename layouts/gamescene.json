@@ -731,6 +731,15 @@
         },
         {
           "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"reallyhottrucktimer\""
+          ]
+        },
+        {
+          "type": {
             "value": "SetCameraCenterX"
           },
           "parameters": [

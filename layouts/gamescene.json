@@ -752,6 +752,26 @@
             "10",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "combo",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "points",
+            "=",
+            "0"
+          ]
         }
       ]
     },

@@ -57,7 +57,7 @@
           "parameters": [
             "spawn_pos",
             "=",
-            "RandomFloatInRange(-250, 230)"
+            "RandomFloatInRange(-260, 225)"
           ]
         }
       ],
@@ -107,17 +107,6 @@
                 "spawn_pos",
                 "-1000",
                 ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ModVarObjet"
-              },
-              "parameters": [
-                "ShieldedCar",
-                "shield_direction",
-                "=",
-                "RandomInRange(0, 1)"
               ]
             }
           ]
@@ -416,59 +405,60 @@
           "conditions": [
             {
               "type": {
-                "value": "VarObjet"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "ShieldedCar",
-                "shield_direction",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetObjectVariableAsBoolean"
-              },
-              "parameters": [
-                "PlayerCar",
-                "kill",
-                "True"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "VarObjet"
-              },
-              "parameters": [
-                "ShieldedCar",
-                "shield_direction",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Right"
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish\")",
+                    "ShieldedCar.PointY(\"Perish\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish2\")",
+                    "ShieldedCar.PointY(\"Perish2\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish3\")",
+                    "ShieldedCar.PointY(\"Perish3\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish4\")",
+                    "ShieldedCar.PointY(\"Perish4\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish5\")",
+                    "ShieldedCar.PointY(\"Perish5\")"
+                  ]
+                }
               ]
             }
           ],

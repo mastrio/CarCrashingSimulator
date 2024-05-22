@@ -1609,12 +1609,6 @@
         },
         {
           "folded": true,
-          "name": "shield_direction",
-          "type": "number",
-          "value": 0
-        },
-        {
-          "folded": true,
           "name": "kill",
           "type": "boolean",
           "value": false
@@ -1634,7 +1628,33 @@
                 {
                   "hasCustomCollisionMask": true,
                   "image": "Racer Assets\\ShieldCar.png",
-                  "points": [],
+                  "points": [
+                    {
+                      "name": "Perish",
+                      "x": 60.5,
+                      "y": 165
+                    },
+                    {
+                      "name": "Perish2",
+                      "x": 97.5,
+                      "y": 103.5
+                    },
+                    {
+                      "name": "Perish3",
+                      "x": 96,
+                      "y": 13.5
+                    },
+                    {
+                      "name": "Perish4",
+                      "x": 97,
+                      "y": 144
+                    },
+                    {
+                      "name": "Perish5",
+                      "x": 98,
+                      "y": 55
+                    }
+                  ],
                   "originPoint": {
                     "name": "origine",
                     "x": 0,
@@ -1649,24 +1669,24 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 31,
+                        "y": 7
                       },
                       {
-                        "x": 80,
-                        "y": 0
+                        "x": 89,
+                        "y": 7
                       },
                       {
-                        "x": 79,
-                        "y": 149.5
+                        "x": 91,
+                        "y": 143.5
                       },
                       {
-                        "x": 33.5,
-                        "y": 168.5
+                        "x": 60,
+                        "y": 158.5
                       },
                       {
-                        "x": 0,
-                        "y": 154.5
+                        "x": 28,
+                        "y": 147.5
                       }
                     ]
                   ]

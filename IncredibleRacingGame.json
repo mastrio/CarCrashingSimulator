@@ -1872,33 +1872,15 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "Firetruck",
+      "name": "fireTruck",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [
-        {
-          "folded": true,
-          "name": "is_hit",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "folded": true,
-          "name": "hit_timer",
-          "type": "number",
-          "value": 120
-        },
-        {
-          "name": "kill",
-          "type": "boolean",
-          "value": false
-        }
-      ],
+      "variables": [],
       "effects": [],
       "behaviors": [],
       "animations": [
         {
-          "name": "damn this truck is fire",
+          "name": "",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1970,9 +1952,6 @@
           },
           {
             "objectName": "ObstacleCar"
-          },
-          {
-            "objectName": "Firetruck"
           }
         ]
       },
@@ -1984,6 +1963,9 @@
       },
       {
         "objectName": "Explode"
+      },
+      {
+        "objectName": "fireTruck"
       },
       {
         "objectName": "Border"
@@ -2007,9 +1989,6 @@
         },
         {
           "name": "ShieldedCar"
-        },
-        {
-          "name": "Firetruck"
         }
       ]
     }
@@ -2074,18 +2053,6 @@
       "name": "combo",
       "type": "number",
       "value": 1
-    },
-    {
-      "folded": true,
-      "name": "firetruck_spawn_side",
-      "type": "number",
-      "value": 0
-    },
-    {
-      "folded": true,
-      "name": "firetruck_spawn_pos",
-      "type": "number",
-      "value": 0
     }
   ],
   "layouts": [

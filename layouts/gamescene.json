@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.5290357402156908,
+    "zoomFactor": 0.667277399833006,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -731,15 +731,6 @@
         },
         {
           "type": {
-            "value": "ResetTimer"
-          },
-          "parameters": [
-            "",
-            "\"reallyhottrucktimer\""
-          ]
-        },
-        {
-          "type": {
             "value": "SetCameraCenterX"
           },
           "parameters": [
@@ -778,6 +769,16 @@
           },
           "parameters": [
             "points",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "overheat",
             "=",
             "0"
           ]

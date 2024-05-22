@@ -543,7 +543,7 @@
           "parameters": [
             "overheat",
             "+",
-            "1"
+            "5"
           ]
         }
       ]

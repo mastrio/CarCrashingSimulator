@@ -82,7 +82,7 @@
               "parameters": [
                 "points",
                 ">=",
-                "15"
+                "20"
               ]
             }
           ],
@@ -397,6 +397,42 @@
                 "-",
                 "10"
               ]
+            },
+            {
+              "type": {
+                "value": "SetGlobalVariableAsBoolean"
+              },
+              "parameters": [
+                "seen_firetruck_instructions",
+                "True"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::Name"
+              },
+              "parameters": [
+                "EnemyObject",
+                "Animation",
+                "=",
+                "\"spikey\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetGlobalVariableAsBoolean"
+              },
+              "parameters": [
+                "seen_spiked_car_instructions",
+                "True"
+              ]
             }
           ]
         },
@@ -497,6 +533,15 @@
               "parameters": [
                 "EnemyObject",
                 "kill",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetGlobalVariableAsBoolean"
+              },
+              "parameters": [
+                "seen_car_instructions",
                 "True"
               ]
             }

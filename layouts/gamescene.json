@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.604083874998895,
+    "zoomFactor": 0.46331118245140435,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -611,11 +611,205 @@
           }
         }
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "RegularCarInstructions",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Racer Assets\\regular_car_instructions.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 265,
+                        "y": 67
+                      },
+                      {
+                        "x": 545,
+                        "y": 67
+                      },
+                      {
+                        "x": 545,
+                        "y": 293
+                      },
+                      {
+                        "x": 265,
+                        "y": 293
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "SpikeCarInstructions",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Racer Assets\\spike_car_instructions.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 265,
+                        "y": 67
+                      },
+                      {
+                        "x": 545,
+                        "y": 67
+                      },
+                      {
+                        "x": 545,
+                        "y": 293
+                      },
+                      {
+                        "x": 265,
+                        "y": 293
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "FiretruckInstructions",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Racer Assets\\firetruck_instructions.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 265,
+                        "y": 67
+                      },
+                      {
+                        "x": 545,
+                        "y": 67
+                      },
+                      {
+                        "x": 545,
+                        "y": 293
+                      },
+                      {
+                        "x": 265,
+                        "y": 293
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
+      {
+        "folderName": "Instructions",
+        "children": [
+          {
+            "objectName": "RegularCarInstructions"
+          },
+          {
+            "objectName": "SpikeCarInstructions"
+          },
+          {
+            "objectName": "FiretruckInstructions"
+          }
+        ]
+      },
       {
         "objectName": "ScoreText"
       },
@@ -788,16 +982,6 @@
           },
           "parameters": [
             "overheat",
-            "=",
-            "0"
-          ]
-        },
-        {
-          "type": {
-            "value": "ModVarGlobal"
-          },
-          "parameters": [
-            "combo",
             "=",
             "0"
           ]
@@ -1106,6 +1290,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Combo number colours",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1291,6 +1476,387 @@
               ]
             }
           ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "First Time Instructions",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Regular Car",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "ObstacleCar",
+                        ">",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "RegularCarInstructions",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "GlobalVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "seen_car_instructions",
+                        "False"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "RegularCarInstructions",
+                    "ObstacleCar.X()",
+                    "ObstacleCar.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "RegularCarInstructions",
+                    "=",
+                    "5"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "RegularCarInstructions",
+                    "=",
+                    "ObstacleCar.X() - (RegularCarInstructions.Width() / 2) + 38",
+                    "=",
+                    "ObstacleCar.Y() - (RegularCarInstructions.Height() / 2) + 80"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "GlobalVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "seen_car_instructions",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "RegularCarInstructions",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Spiked Car",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "ShieldedCar",
+                        ">",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "SpikeCarInstructions",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "GlobalVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "seen_spiked_car_instructions",
+                        "False"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "SpikeCarInstructions",
+                    "ShieldedCar.X()",
+                    "ShieldedCar.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "SpikeCarInstructions",
+                    "=",
+                    "5"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "SpikeCarInstructions",
+                    "=",
+                    "ShieldedCar.X() - (SpikeCarInstructions.Width() / 2) + 60",
+                    "=",
+                    "ShieldedCar.Y() - (SpikeCarInstructions.Height() / 2) + 80"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "GlobalVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "seen_spiked_car_instructions",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "SpikeCarInstructions",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Firetruck",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "Firetruck",
+                        ">",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "FiretruckInstructions",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "GlobalVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "seen_firetruck_instructions",
+                        "False"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "FiretruckInstructions",
+                    "Firetruck.X()",
+                    "Firetruck.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "FiretruckInstructions",
+                    "=",
+                    "5"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "FiretruckInstructions",
+                    "=",
+                    "Firetruck.X() - (FiretruckInstructions.Width() / 2) + 40",
+                    "=",
+                    "Firetruck.Y() - (FiretruckInstructions.Height() / 2) + 85"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "GlobalVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "seen_firetruck_instructions",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "FiretruckInstructions",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
         }
       ],
       "parameters": []

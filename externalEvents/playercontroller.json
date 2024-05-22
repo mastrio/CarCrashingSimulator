@@ -543,7 +543,7 @@
           "parameters": [
             "overheat",
             "+",
-            "5"
+            "1"
           ]
         }
       ]
@@ -570,46 +570,7 @@
           "parameters": [
             "PlayerCar",
             "kill",
-            "False"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetObjectVariableAsBoolean"
-          },
-          "parameters": [
-            "PlayerCar",
-            "crashed",
             "True"
-          ]
-        },
-        {
-          "type": {
-            "value": "AddForceAL"
-          },
-          "parameters": [
-            "PlayerCar",
-            "RandomInRange(0, 360)",
-            "4000",
-            "1"
-          ]
-        },
-        {
-          "type": {
-            "value": "Wait"
-          },
-          "parameters": [
-            "0.5"
-          ]
-        },
-        {
-          "type": {
-            "value": "Scene"
-          },
-          "parameters": [
-            "",
-            "\"YouDiedLol\"",
-            ""
           ]
         }
       ]

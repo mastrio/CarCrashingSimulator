@@ -599,6 +599,33 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/pixel art/e277b4eaf6ac17fafedb222c2900b817f1fe3018b42a46430d530f0df8d42b60_Flat Bar Orange Fill Bar.png",
           "name": "Flat Bar Orange Fill Bar.png"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Racer Assets/regular_car_instructions.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Racer Assets\\regular_car_instructions.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Racer Assets/spike_car_instructions.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Racer Assets\\spike_car_instructions.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Racer Assets/firetruck_instructions.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Racer Assets\\firetruck_instructions.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1618,7 +1645,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "spikey",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1673,8 +1700,8 @@
                         "y": 7
                       },
                       {
-                        "x": 89,
-                        "y": 7
+                        "x": 87.5,
+                        "y": 6.5
                       },
                       {
                         "x": 91,
@@ -1892,15 +1919,34 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "fireTruck",
+      "name": "Firetruck",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "is_hit",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "folded": true,
+          "name": "hit_timer",
+          "type": "number",
+          "value": 120
+        },
+        {
+          "folded": true,
+          "name": "kill",
+          "type": "boolean",
+          "value": false
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "damn this truck is fire",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1968,6 +2014,9 @@
         "folderName": "Enemies",
         "children": [
           {
+            "objectName": "Firetruck"
+          },
+          {
             "objectName": "ShieldedCar"
           },
           {
@@ -1983,9 +2032,6 @@
       },
       {
         "objectName": "Explode"
-      },
-      {
-        "objectName": "fireTruck"
       },
       {
         "objectName": "Border"
@@ -2009,6 +2055,9 @@
         },
         {
           "name": "ShieldedCar"
+        },
+        {
+          "name": "Firetruck"
         }
       ]
     }
@@ -2073,6 +2122,36 @@
       "name": "combo",
       "type": "number",
       "value": 1
+    },
+    {
+      "folded": true,
+      "name": "firetruck_spawn_side",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "firetruck_spawn_pos",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "seen_car_instructions",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "folded": true,
+      "name": "seen_spiked_car_instructions",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "folded": true,
+      "name": "seen_firetruck_instructions",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [

@@ -588,7 +588,6 @@
         "userAdded": true
       },
       {
-<<<<<<< Updated upstream
         "alwaysLoaded": false,
         "file": "assets/Flat Bar Orange Fill Bar.png",
         "kind": "image",
@@ -600,16 +599,6 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/pixel art/e277b4eaf6ac17fafedb222c2900b817f1fe3018b42a46430d530f0df8d42b60_Flat Bar Orange Fill Bar.png",
           "name": "Flat Bar Orange Fill Bar.png"
         }
-=======
-        "file": "audio/Explosion0.mp3",
-        "kind": "audio",
-        "metadata": "",
-        "name": "audio\\Explosion0.mp3",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": true
->>>>>>> Stashed changes
       }
     ],
     "resourceFolders": []

@@ -586,6 +586,19 @@
         "name": "Racer Assets\\FireTruck.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Flat Bar Orange Fill Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Flat Bar Orange Fill Bar.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/pixel art/e277b4eaf6ac17fafedb222c2900b817f1fe3018b42a46430d530f0df8d42b60_Flat Bar Orange Fill Bar.png",
+          "name": "Flat Bar Orange Fill Bar.png"
+        }
       }
     ],
     "resourceFolders": []

@@ -57,7 +57,7 @@
           "parameters": [
             "spawn_pos",
             "=",
-            "RandomFloatInRange(-250, 250)"
+            "RandomFloatInRange(-260, 225)"
           ]
         }
       ],
@@ -82,7 +82,7 @@
               "parameters": [
                 "points",
                 ">=",
-                "5"
+                "15"
               ]
             }
           ],
@@ -107,17 +107,6 @@
                 "spawn_pos",
                 "-1000",
                 ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ModVarObjet"
-              },
-              "parameters": [
-                "ShieldedCar",
-                "shield_direction",
-                "=",
-                "RandomInRange(0, 1)"
               ]
             }
           ]
@@ -201,6 +190,129 @@
         "textG": 0,
         "textR": 0
       },
+      "comment": "Firetruck Spawning"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "firetruck_spawn_side",
+            "=",
+            "RandomInRange(0, 1)"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "firetruck_spawn_side",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "firetruck_spawn_pos",
+                "=",
+                "-355"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "firetruck_spawn_side",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "firetruck_spawn_pos",
+                "=",
+                "275"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"reallyhottrucktimer\"",
+            ">=",
+            "15 - (combo * 0.65)"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"reallyhottrucktimer\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Firetruck",
+            "firetruck_spawn_pos",
+            "-1000",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
       "comment": "Traffic Movement"
     },
     {
@@ -265,34 +377,25 @@
           "conditions": [
             {
               "type": {
-                "value": "VarObjet"
+                "value": "AnimatableCapability::AnimatableBehavior::Name"
               },
               "parameters": [
-                "ShieldedCar",
-                "shield_direction",
+                "EnemyObject",
+                "Animation",
                 "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Left"
+                "\"damn this truck is fire\""
               ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "SetObjectVariableAsBoolean"
+                "value": "ModVarGlobal"
               },
               "parameters": [
-                "PlayerCar",
-                "kill",
-                "True"
+                "overheat",
+                "-",
+                "10"
               ]
             }
           ]
@@ -302,22 +405,60 @@
           "conditions": [
             {
               "type": {
-                "value": "VarObjet"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "ShieldedCar",
-                "shield_direction",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Right"
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish\")",
+                    "ShieldedCar.PointY(\"Perish\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish2\")",
+                    "ShieldedCar.PointY(\"Perish2\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish3\")",
+                    "ShieldedCar.PointY(\"Perish3\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish4\")",
+                    "ShieldedCar.PointY(\"Perish4\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CollisionPoint"
+                  },
+                  "parameters": [
+                    "PlayerCar",
+                    "ShieldedCar.PointX(\"Perish5\")",
+                    "ShieldedCar.PointY(\"Perish5\")"
+                  ]
+                }
               ]
             }
           ],
@@ -446,243 +587,6 @@
             "EnemyObject",
             "1200",
             ""
-          ]
-        },
-        {
-          "type": {
-            "value": "ModVarScene"
-          },
-          "parameters": [
-            "explosiongenerator",
-            "=",
-            "RandomInRange(1,5)"
-          ]
-        }
-      ],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "VarScene"
-              },
-              "parameters": [
-                "explosiongenerator",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "StopMusicCanal"
-              },
-              "parameters": [
-                "",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "PlayMusicCanal"
-              },
-              "parameters": [
-                "",
-                "audio\\Explosion1.mp3",
-                "1",
-                "50",
-                "50",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "VarScene"
-              },
-              "parameters": [
-                "explosiongenerator",
-                "=",
-                "2"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "StopMusicCanal"
-              },
-              "parameters": [
-                "",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "PlayMusicCanal"
-              },
-              "parameters": [
-                "",
-                "audio\\Explosion2.mp3",
-                "1",
-                "50",
-                "50",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "VarScene"
-              },
-              "parameters": [
-                "explosiongenerator",
-                "=",
-                "3"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "StopMusicCanal"
-              },
-              "parameters": [
-                "",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "PlayMusicCanal"
-              },
-              "parameters": [
-                "",
-                "audio\\Explosion3.mp3",
-                "1",
-                "50",
-                "50",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "VarScene"
-              },
-              "parameters": [
-                "explosiongenerator",
-                "=",
-                "4"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "StopMusicCanal"
-              },
-              "parameters": [
-                "",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "PlayMusicCanal"
-              },
-              "parameters": [
-                "",
-                "audio\\Explosion4.mp3",
-                "1",
-                "50",
-                "50",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "VarScene"
-              },
-              "parameters": [
-                "explosiongenerator",
-                "=",
-                "5"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "StopMusicCanal"
-              },
-              "parameters": [
-                "",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "PlayMusicCanal"
-              },
-              "parameters": [
-                "",
-                "audio\\Explosion5.mp3",
-                "1",
-                "50",
-                "50",
-                ""
-              ]
-            }
           ]
         }
       ]

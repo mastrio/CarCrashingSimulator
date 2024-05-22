@@ -333,12 +333,30 @@
       "conditions": [
         {
           "type": {
-            "value": "ObjectVariableAsBoolean"
+            "value": "BuiltinCommonInstructions::And"
           },
-          "parameters": [
-            "PlayerCar",
-            "crashed",
-            "True"
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "PlayerCar",
+                "crashed",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hitstop_time",
+                "=",
+                "0"
+              ]
+            }
           ]
         }
       ],

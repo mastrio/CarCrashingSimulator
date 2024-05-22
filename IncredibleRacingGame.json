@@ -1955,7 +1955,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "damn this truck is fire",
+          "name": "firetruck",
           "useMultipleDirections": false,
           "directions": [
             {

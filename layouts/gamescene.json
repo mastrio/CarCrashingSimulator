@@ -1207,7 +1207,7 @@
           "parameters": [
             "Difficulty_Scaling",
             "=",
-            "clamp((traffic_speed-180)/30, 0, 5)",
+            "clamp((traffic_speed-200)/30, 0, 5)",
             ""
           ]
         }

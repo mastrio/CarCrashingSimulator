@@ -577,6 +577,15 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Racer Assets/FireTruck.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Racer Assets\\FireTruck.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -1846,6 +1855,66 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "fireTruck",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Racer Assets\\FireTruck.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 5
+                      },
+                      {
+                        "x": 74,
+                        "y": 5
+                      },
+                      {
+                        "x": 74,
+                        "y": 165
+                      },
+                      {
+                        "x": 7,
+                        "y": 165
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -1881,6 +1950,9 @@
       },
       {
         "objectName": "Explode"
+      },
+      {
+        "objectName": "fireTruck"
       },
       {
         "objectName": "Border"
@@ -1962,6 +2034,12 @@
       "name": "overheat",
       "type": "number",
       "value": 0
+    },
+    {
+      "folded": true,
+      "name": "combo",
+      "type": "number",
+      "value": 1
     }
   ],
   "layouts": [

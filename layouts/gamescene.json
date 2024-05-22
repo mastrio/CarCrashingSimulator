@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.46331118245140435,
+    "zoomFactor": 2.5991525916796885,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -216,6 +216,23 @@
       "x": 351,
       "y": 248,
       "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 48,
+      "height": 56,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Difficulty_Scaling",
+      "persistentUuid": "ef505456-8c91-41cf-8728-57ff7de327a9",
+      "width": 250,
+      "x": 356,
+      "y": 145,
+      "zOrder": 14,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -791,6 +808,43 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "db57d0bcdc074868304ca46431ac85fcef3f613be5fba73ae0adc26ee2c8629b",
+      "name": "Difficulty_Scaling",
+      "type": "TiledUnitsBar::TiledUnitsBar",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "UnitWidth": 50,
+        "HideBackground": true,
+        "ShowBackground": false,
+        "InitialValue": 0,
+        "MaxValue": 5
+      },
+      "childrenContent": {
+        "Background": {
+          "bottomMargin": 0,
+          "height": 50,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "assets\\EmptyStar.png",
+          "tiled": true,
+          "topMargin": 0,
+          "width": 50
+        },
+        "Bar": {
+          "height": 50,
+          "texture": "assets\\EmptyStar.png",
+          "width": 50
+        },
+        "FillBar": {
+          "height": 50,
+          "texture": "assets\\FullStar.png",
+          "width": 50
+        }
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -836,6 +890,9 @@
       },
       {
         "objectName": "OrangeFlatBar"
+      },
+      {
+        "objectName": "Difficulty_Scaling"
       }
     ]
   },
@@ -1140,6 +1197,17 @@
             "Overheat_Bar",
             "=",
             "GlobalVariable(overheat)",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "TiledUnitsBar::TiledUnitsBar::SetValue"
+          },
+          "parameters": [
+            "Difficulty_Scaling",
+            "=",
+            "clamp((traffic_speed-180)/30, 0, 5)",
             ""
           ]
         }

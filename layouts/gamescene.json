@@ -28,6 +28,12 @@
       "name": "explosiongenerator",
       "type": "number",
       "value": 0
+    },
+    {
+      "folded": true,
+      "name": "soundfxgenerator",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [

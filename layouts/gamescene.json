@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 2.5991525916796885,
+    "zoomFactor": 1.134371579716113,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -147,13 +147,14 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "depth": 48,
+      "height": 28,
       "keepRatio": true,
       "layer": "",
       "name": "Overheat_Bar",
       "persistentUuid": "226c77af-7916-430f-8b1d-02f202076fd4",
-      "width": 0,
+      "width": 192,
       "x": 350,
       "y": 332,
       "zOrder": 9,
@@ -202,8 +203,8 @@
       "name": "ComboNumber",
       "persistentUuid": "c535f385-8589-4987-9e53-7d4516556a3e",
       "width": 0,
-      "x": 472,
-      "y": 242,
+      "x": 519,
+      "y": 241,
       "zOrder": 12,
       "numberProperties": [],
       "stringProperties": [],
@@ -218,7 +219,7 @@
       "layer": "",
       "name": "OrangeFlatBar",
       "persistentUuid": "24c4ee68-acf9-4f4e-b57b-2fabb9446039",
-      "width": 119,
+      "width": 163,
       "x": 351,
       "y": 248,
       "zOrder": 13,
@@ -230,15 +231,31 @@
       "angle": 0,
       "customSize": true,
       "depth": 48,
-      "height": 56,
+      "height": 55,
       "keepRatio": true,
       "layer": "",
       "name": "Difficulty_Scaling",
       "persistentUuid": "ef505456-8c91-41cf-8728-57ff7de327a9",
-      "width": 250,
-      "x": 356,
-      "y": 145,
+      "width": 251,
+      "x": 350,
+      "y": 149,
       "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "DifficultyText",
+      "persistentUuid": "83976136-fdec-48d7-9650-3e4a319fee0c",
+      "width": 0,
+      "x": 349,
+      "y": 89,
+      "zOrder": 15,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -452,7 +469,7 @@
         "isShadowEnabled": true,
         "italic": true,
         "outlineColor": "255;255;255",
-        "outlineThickness": 10,
+        "outlineThickness": 5,
         "shadowAngle": 90,
         "shadowBlurRadius": 2,
         "shadowColor": "0;0;0",
@@ -851,6 +868,47 @@
           "width": 50
         }
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": true,
+      "name": "DifficultyText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Difficulty",
+      "font": "CarterOne-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 40,
+      "color": {
+        "b": 128,
+        "g": 245,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": true,
+        "italic": true,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 5,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Difficulty",
+        "font": "CarterOne-Regular.ttf",
+        "textAlignment": "left",
+        "characterSize": 40,
+        "color": "255;245;128"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -896,6 +954,9 @@
       },
       {
         "objectName": "OrangeFlatBar"
+      },
+      {
+        "objectName": "DifficultyText"
       },
       {
         "objectName": "Difficulty_Scaling"
@@ -1189,7 +1250,7 @@
         "textG": 0,
         "textR": 0
       },
-      "comment": "Managing the Overheat Bar"
+      "comment": "Updating Overheat & Difficulty Setting Bard"
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -1213,7 +1274,7 @@
           "parameters": [
             "Difficulty_Scaling",
             "=",
-            "clamp((traffic_speed-200)/30, 0, 5)",
+            "clamp((traffic_speed-170)/30, 0, 5)",
             ""
           ]
         }

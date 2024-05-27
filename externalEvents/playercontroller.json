@@ -268,6 +268,16 @@
         },
         {
           "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "hitstop_time",
+            "=",
+            "1.5"
+          ]
+        },
+        {
+          "type": {
             "value": "AddForceAL"
           },
           "parameters": [
@@ -561,7 +571,7 @@
           "parameters": [
             "overheat",
             "+",
-            "1.8 + GlobalVariable(difficulty)*0.2"
+            "2 + GlobalVariable(difficulty)*0.2"
           ]
         }
       ]
@@ -589,6 +599,16 @@
             "PlayerCar",
             "kill",
             "True"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "overheat",
+            "=",
+            "0"
           ]
         }
       ]

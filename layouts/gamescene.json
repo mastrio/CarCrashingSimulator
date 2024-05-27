@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.49508400737489683,
+    "zoomFactor": 0.9296875000000148,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -108,7 +108,7 @@
       "persistentUuid": "af97ffb8-518f-45b0-9525-e40b955a9ed3",
       "width": 0,
       "x": 351,
-      "y": 0,
+      "y": -80,
       "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
@@ -139,7 +139,7 @@
       "persistentUuid": "6dd0244a-5fab-40f5-addf-cc88e2979e19",
       "width": 503,
       "x": 439,
-      "y": 46,
+      "y": -34,
       "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
@@ -188,7 +188,7 @@
       "persistentUuid": "91806b18-0256-4afa-beb0-24f5c53fcf32",
       "width": 0,
       "x": 348,
-      "y": 190,
+      "y": 165,
       "zOrder": 11,
       "numberProperties": [],
       "stringProperties": [],
@@ -204,7 +204,7 @@
       "persistentUuid": "c535f385-8589-4987-9e53-7d4516556a3e",
       "width": 0,
       "x": 519,
-      "y": 241,
+      "y": 216,
       "zOrder": 12,
       "numberProperties": [],
       "stringProperties": [],
@@ -221,7 +221,7 @@
       "persistentUuid": "24c4ee68-acf9-4f4e-b57b-2fabb9446039",
       "width": 163,
       "x": 351,
-      "y": 248,
+      "y": 223,
       "zOrder": 13,
       "numberProperties": [],
       "stringProperties": [],
@@ -238,7 +238,7 @@
       "persistentUuid": "ef505456-8c91-41cf-8728-57ff7de327a9",
       "width": 251,
       "x": 350,
-      "y": 149,
+      "y": 89,
       "zOrder": 14,
       "numberProperties": [],
       "stringProperties": [],
@@ -254,7 +254,7 @@
       "persistentUuid": "83976136-fdec-48d7-9650-3e4a319fee0c",
       "width": 0,
       "x": 349,
-      "y": 89,
+      "y": 29,
       "zOrder": 15,
       "numberProperties": [],
       "stringProperties": [],
@@ -1897,11 +1897,30 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "GlobalVariableAsBoolean"
+                    "value": "BuiltinCommonInstructions::Or"
                   },
-                  "parameters": [
-                    "seen_car_instructions",
-                    "True"
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "GlobalVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "seen_car_instructions",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "ObstacleCar",
+                        "=",
+                        "0"
+                      ]
+                    }
                   ]
                 }
               ],
@@ -2010,11 +2029,30 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "GlobalVariableAsBoolean"
+                    "value": "BuiltinCommonInstructions::Or"
                   },
-                  "parameters": [
-                    "seen_spiked_car_instructions",
-                    "True"
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "GlobalVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "seen_spiked_car_instructions",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "ShieldedCar",
+                        "=",
+                        "0"
+                      ]
+                    }
                   ]
                 }
               ],

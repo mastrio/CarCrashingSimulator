@@ -2211,6 +2211,18 @@
       "name": "hitstop_time",
       "type": "number",
       "value": 0
+    },
+    {
+      "folded": true,
+      "name": "difficulty",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "absurd",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [

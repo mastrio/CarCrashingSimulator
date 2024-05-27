@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.7130377630690424,
+    "zoomFactor": 0.34375202416123274,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -675,6 +675,25 @@
         },
         {
           "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "difficulty",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetGlobalVariableAsBoolean"
+          },
+          "parameters": [
+            "absurd",
+            "="
+          ]
+        },
+        {
+          "type": {
             "value": "Scene"
           },
           "parameters": [
@@ -717,6 +736,15 @@
             "missile_spawn_rate",
             "=",
             "0.1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetGlobalVariableAsBoolean"
+          },
+          "parameters": [
+            "absurd",
+            "True"
           ]
         },
         {

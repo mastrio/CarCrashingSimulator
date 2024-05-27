@@ -80,9 +80,9 @@
                 "value": "VarGlobal"
               },
               "parameters": [
-                "points",
+                "difficulty",
                 ">=",
-                "20"
+                "0.5"
               ]
             }
           ],
@@ -390,16 +390,6 @@
           "actions": [
             {
               "type": {
-                "value": "ModVarGlobal"
-              },
-              "parameters": [
-                "overheat",
-                "-",
-                "20"
-              ]
-            },
-            {
-              "type": {
                 "value": "SetGlobalVariableAsBoolean"
               },
               "parameters": [
@@ -415,6 +405,70 @@
                 "hitstop_time",
                 "=",
                 "0.5"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarGlobal"
+                  },
+                  "parameters": [
+                    "overheat",
+                    ">",
+                    "50"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "overheat",
+                    "-",
+                    "50"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Not"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "VarGlobal"
+                      },
+                      "parameters": [
+                        "overheat",
+                        ">",
+                        "50"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "overheat",
+                    "=",
+                    "0"
+                  ]
+                }
               ]
             }
           ]

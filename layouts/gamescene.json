@@ -1065,6 +1065,15 @@
         },
         {
           "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"difficultyscaling\""
+          ]
+        },
+        {
+          "type": {
             "value": "SetCameraCenterX"
           },
           "parameters": [
@@ -1250,7 +1259,7 @@
         "textG": 0,
         "textR": 0
       },
-      "comment": "Updating Overheat & Difficulty Setting Bard"
+      "comment": "Updating Overheat & Difficulty Setting Bars"
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -1274,8 +1283,139 @@
           "parameters": [
             "Difficulty_Scaling",
             "=",
-            "clamp((traffic_speed-170)/30, 0, 5)",
+            "clamp(GlobalVariable(difficulty), 0, 5)",
             ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "Difficulty"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"difficultyscaling\"",
+            ">=",
+            "20"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "difficulty",
+            "+",
+            "0.5"
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"difficultyscaling\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "GlobalVariableAsBoolean"
+          },
+          "parameters": [
+            "absurd",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "traffic_speed",
+            "=",
+            "200 + GlobalVariable(difficulty)*20"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "traffic_spawn_rate",
+                ">",
+                "0.3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "traffic_spawn_rate",
+                "=",
+                "1 - GlobalVariable(difficulty)/10"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "missile_spawn_rate",
+                ">",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "missile_spawn_rate",
+                "=",
+                "4 - GlobalVariable(difficulty)/5"
+              ]
+            }
           ]
         }
       ]

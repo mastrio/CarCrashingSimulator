@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 1.134371579716113,
+    "zoomFactor": 0.49508400737489683,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -580,7 +580,7 @@
         "BarBottomPadding": 6,
         "BarLeftPadding": 4,
         "BarRightPadding": 4,
-        "MaxValue": 0.9,
+        "MaxValue": 1.8,
         "InitialValue": 0,
         "EasingDuration": 0
       },
@@ -1357,7 +1357,7 @@
             "",
             "\"comboTimer\"",
             ">=",
-            "0.9"
+            "1.8"
           ]
         },
         {
@@ -1404,7 +1404,7 @@
           "parameters": [
             "OrangeFlatBar",
             "=",
-            "1-TimerElapsedTime(\"comboTimer\")",
+            "1.9-TimerElapsedTime(\"comboTimer\")",
             ""
           ]
         }
@@ -1632,11 +1632,46 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "RegularCarInstructions",
+                "=",
+                "100"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "SpikeCarInstructions",
+                "=",
+                "100"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "FiretruckInstructions",
+                "=",
+                "100"
+              ]
+            }
+          ]
+        },
+        {
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Regular Car",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1696,16 +1731,6 @@
                     "ObstacleCar.Y()",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "ChangePlan"
-                  },
-                  "parameters": [
-                    "RegularCarInstructions",
-                    "=",
-                    "5"
-                  ]
                 }
               ]
             },
@@ -1760,7 +1785,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Spiked Car",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1820,16 +1844,6 @@
                     "ShieldedCar.Y()",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "ChangePlan"
-                  },
-                  "parameters": [
-                    "SpikeCarInstructions",
-                    "=",
-                    "5"
-                  ]
                 }
               ]
             },
@@ -1884,7 +1898,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Firetruck",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1944,16 +1957,6 @@
                     "Firetruck.Y()",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "ChangePlan"
-                  },
-                  "parameters": [
-                    "FiretruckInstructions",
-                    "=",
-                    "5"
-                  ]
                 }
               ]
             },
@@ -1980,11 +1983,30 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "GlobalVariableAsBoolean"
+                    "value": "BuiltinCommonInstructions::Or"
                   },
-                  "parameters": [
-                    "seen_firetruck_instructions",
-                    "True"
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "GlobalVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "seen_firetruck_instructions",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "Firetruck",
+                        "=",
+                        "0"
+                      ]
+                    }
                   ]
                 }
               ],

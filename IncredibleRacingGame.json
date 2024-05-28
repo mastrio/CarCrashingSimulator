@@ -1692,6 +1692,12 @@
           "name": "kill",
           "type": "boolean",
           "value": false
+        },
+        {
+          "folded": true,
+          "name": "shield_direction",
+          "type": "number",
+          "value": 0
         }
       ],
       "effects": [],

@@ -108,6 +108,17 @@
                 "-1000",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "ShieldedCar",
+                "shield_direction",
+                "=",
+                "RandomInRange(0, 1)"
+              ]
             }
           ]
         },

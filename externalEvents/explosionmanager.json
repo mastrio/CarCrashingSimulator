@@ -123,7 +123,7 @@
               "parameters": [
                 "soundfxgenerator",
                 "=",
-                "Random(5)"
+                "RandomInRange(1,5)"
               ]
             }
           ],
@@ -258,7 +258,7 @@
                   "parameters": [
                     "soundfxgenerator",
                     "=",
-                    "0"
+                    "5"
                   ]
                 }
               ],
